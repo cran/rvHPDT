@@ -1,0 +1,71 @@
+===================== INSTRUCTIONS ==============================
+
+This document contains instructions for installing and using rvHPDT
+package for R.
+
+
+1. Install
+
+For Linux users, download the MERLIN for haplotyping in pedigrees.
+
+For Linux users, download the compiled R package file for Linux:
+rvHPDT_1.0.tar.gz
+For Windows users, download the compiled R package file for Windows:
+rvHPDT_1.0.zip
+Then use the following function in R to install the package
+>install.packages(pkgs=filename,repos=NULL)
+where "filename" should be replaced with the corresponding file name.
+
+Moreover, install the following packages, 
+>install.packages(pkgs="gregmisc") 
+
+
+
+2. Use
+
+Use
+>library(rvHPDT) 
+>library(gregmisc) 
+to load the packages into R.
+
+Use
+>?rhapPDT 
+to read the instruction.
+
+
+3. Example 
+
+Using the example data file: MLIP.ped 
+ 
+ 
+ 
+ped<-read.table("MLIP.ped",head=1,stringsAsFactors=FALSE)
+map<-read.table("CFS.merlin.map",head=1,stringsAsFactors=FALSE)  
+test<-rhapPDT(ped, map, trace=TRUE) 
+test 
+
+#$hPDT_v0
+#[1] 0.4231359
+
+#$hPDT_v1
+#[1] 0.1481145
+
+#$rvPDT_v0
+#[1] 0.03237073
+
+#$rvPDT_v1
+#[1] 0.162997
+ 
+ 
+ 
+
+4. Reference 
+
+
+Guo W , Shugart YY, Does Haplotype-based Collapsing Tests Gain More Power than Variant-based Collapsing Tests for Detecting Rare Variants in Pedigrees  
+(manuscript). 
+
+   
+-----------------------------------------------------------------
+If you have any questions, please email Wei Guo at:
+wei.guo3@nih.gov
