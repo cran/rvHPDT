@@ -1,4 +1,4 @@
-import(gregmisc) 
+import(gtools) 
 export(convert.factors.to.strings.in.dataframe, 
        mydaoshu,
        rchild,

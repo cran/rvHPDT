@@ -26,7 +26,7 @@ Moreover, please install MERLIN software that could be downloaded from http://ww
 
 Use
 >library(rvHPDT) 
->library(gregmisc) 
+>library(gtools) 
 to load the packages into R.
 
 Use
