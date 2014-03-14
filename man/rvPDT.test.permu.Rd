@@ -1,15 +1,14 @@
-\name{rvPDT.test}
-\alias{rvPDT.test}
+\name{rvPDT.test.permu}
+\alias{rvPDT.test.permu}
 \title{Variants-based pedigree disequilibrium test for rare variants in pedigrees.}
 \description{
 To detecting rare variants for binary traits using general pedigrees, the pedigree disequilibrium tests are extended by collapsing rare variants with/without weights.}
-\usage{ rvPDT.test(seed=NULL,ped, aff=2,unaff=1, snpCol, hfreq=NULL,
- training=0.3, mu=1.28,useFamWeight=TRUE,trace=FALSE)   
+\usage{rvPDT.test.permu(ped, aff=2,unaff=1, snpCol, hfreq=NULL,
+useFamWeight=TRUE, nperm=1000,trace=FALSE)    
 }  
    
 
-\arguments{  
-\item{seed}{indicates the seed for randomly selectiong training data.} 
+\arguments{   
 \item{ped}{input data, has same format with PLINK but having column names. The PED file is a white-space (space or tab) delimited file: the first six columns are mandatory: 
      FID: Family ID;
      IID: Individual ID;
@@ -22,10 +21,9 @@ Genotypes (column 7 onwards) should also be white-space delimited; they are code
 \item{unaff}{indicates the values that represents unaffected status in ped data; default is 1.} 
 \item{snpCol}{indicates the columns of variants in ped data.}
 \item{hfreq}{indicates the frequencies of variants that used in calculating weights; when it is NULL, the frequencies are estimated by ped data.} 
-\item{training}{indicates the proportion of training data; default is 0.3.}  
-\item{mu}{indicates mu value that defines causal in the training data; default is 1.04.}    
-\item{useFamWeight}{indicates whether the family weights need to be used in the test.}     
-\item{trace}{indicates whether or not the intermediate outcomes should be printed; default is FALSE.}  
+\item{useFamWeight}{indicates whether the family weights need to be used in the test.}    
+\item{nperm}{indicates the times of permutation; default is 1000.}    
+\item{trace}{indicates wether or not the intermediate outcomes should be printed; default is FALSE.}  
 }
 
   

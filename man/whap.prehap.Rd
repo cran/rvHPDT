@@ -6,7 +6,7 @@ Before running hPDT test, haplotype pairs are inferred by calling MERLIN in linu
 Require the R package of "gregmisc" and MERLIN software.
 }  
 \usage{ 
-whap.prehap(ped,map,outFN.prefix="merlin", aff=2,trace=FALSE) 
+whap.prehap(ped,map, merlinDir="", outFN.prefix="merlin",aff=2,trace=FALSE)  
 }  
    
 
@@ -25,6 +25,7 @@ MARKER: marker name in PED file that is usually rs# or snp identifier
 POSITION: Genetic distance (morgans)
 The data file and map file can include different sets of markers, but markers that are absent from the map file will be ignored by MERLIN. 
 }
+\item{merlinDir}{indicates the directory of Merlin, for example, merlinDir="./Merlin/"; use the default="" when Merlin is in current directory or your bin directory.}  
 \item{outFN.prefix}{Requests that output file of MERLIN names should be derived from outFN.prefix. For example, when it is set to be "merlin" as default, estimated haplotypes should be stored in a file called merlin.chr.}  
 \item{aff}{indicates the values that represents affected status in ped data; default is 2.} 
 \item{trace}{indicates whether or not the intermediate outcomes should be printed; default is FALSE.}  

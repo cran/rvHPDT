@@ -20,6 +20,7 @@ Moreover, install the following packages,
 >install.packages(pkgs="gregmisc") 
 
 
+Moreover, please install MERLIN software that could be downloaded from http://www.sph.umich.edu/csg/abecasis/merlin/tour/haplotyping.html.
 
 2. Use
 
@@ -39,31 +40,20 @@ Using the example data file: MLIP.ped
  
  
  
-ped<-read.table("MLIP.ped",head=1,stringsAsFactors=FALSE)
-map<-read.table("CFS.merlin.map",head=1,stringsAsFactors=FALSE)  
-test<-rhapPDT(ped, map, trace=TRUE) 
+ped<-read.table("example.ped",head=1,stringsAsFactors=FALSE)
+map<-read.table("example.map",head=1,stringsAsFactors=FALSE)  
+test<-rhapPDT(ped, map, trace=TRUE, nperm=10) 
 test 
+  
+  
+#     maxH      hPDT    hPDT-t      maxV      vPDT    vPDT-t 
+# 0.1818182 0.5910696 0.6061041 0.7272727 0.6483508 0.4081867 
 
-#$hPDT_v0
-#[1] 0.4231359
-
-#$hPDT_v1
-#[1] 0.1481145
-
-#$rvPDT_v0
-#[1] 0.03237073
-
-#$rvPDT_v1
-#[1] 0.162997
- 
- 
- 
 
 4. Reference 
 
 
-Guo W , Shugart YY, Does Haplotype-based Collapsing Tests Gain More Power than Variant-based Collapsing Tests for Detecting Rare Variants in Pedigrees  
-(manuscript). 
+Guo W , Shugart YY, The power comparison of the haplotype-based collapsing tests and the variant-based collapsing tests for detecting rare variants in pedigrees (manuscript). 
 
    
 -----------------------------------------------------------------

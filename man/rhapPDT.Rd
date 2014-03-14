@@ -3,7 +3,8 @@
 \title{Calling haplotype-based and variant-based pedigree disequilibrium test for rare variants in pedigrees.}
 \description{
 To detecting rare variants for binary traits using general pedigrees, the pedigree disequilibrium tests are proposed by collapsing rare haplotypes/variants with/without weights.}
-\usage{ rhapPDT(ped, map, aff=2, unaff=1, merlinFN.prefix="merlin", trace=TRUE) 
+\usage{ rhapPDT(ped, map, aff=2, unaff=1, mu=1.04,
+merlinFN.prefix="merlin", nperm=1000, trace=TRUE) 
 }
     
    
@@ -27,7 +28,9 @@ The data file and map file can include different sets of markers, but markers th
 } 
 \item{aff}{indicates the values that represents affected status in "PHENO" column of PED data; default is 2.}
 \item{unaff}{indicates the values that represents unaffected status in "PHENO" column of PED data; default is 1.}  
+\item{mu}{indicates mu value that defines causal in the training data; default is 1.04.}  
 \item{merlinFN.prefix}{ Requests that output file of MERLIN names should be derived from outFN.prefix. For example, when it is set to be "merlin" as default, estimated haplotypes should be stored in a file called merlin.chr.}   
+\item{nperm}{indicates the times of permutation; default is 1000.}     
 \item{trace}{ Indicates whether or not the intermediate outcomes should be printed; default is FALSE.}  
 }
 
