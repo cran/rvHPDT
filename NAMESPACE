@@ -1,4 +1,6 @@
 import(gtools) 
+importFrom("stats", "pnorm")
+importFrom("utils", "read.table", "write.table") 
 export(convert.factors.to.strings.in.dataframe, 
        mydaoshu,
        rchild,
